@@ -8,3 +8,5 @@ Get-ChildItem *.pdf | Rename-Item -NewName { $_.Name -replace ' ','' }
 
 dir -Path "H:\Home Docs" -Filter *.pdf -Recurse | ForEach-Object { Copy-Item $_.FullName "E:\New Home Docs" }
 
+#gets file name information from txt file, loops through each file name and copies it to a directory
+get-content diff.txt | foreach-object { copy-item -Path $_ -Destination "c:\files"}
